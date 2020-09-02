@@ -11,9 +11,9 @@ class toiot
     public:
         toiot();
         void setupToiot(char* nodeI, char* ssid, char* password, char* broker_ip);
-        void pub(char* sensorId, int value);
-        void pub(char* sensorId, int value1, int value2);
-        void pub(char* sensorId, int value1, int value2, int value3);
+        void pub(char* sensorId, float value);
+        void pub(char* sensorId, float value1, float value2);
+        void pub(char* sensorId, float value1, float value2, float value3);
         void reconnect();
         PubSubClient client;
     private:

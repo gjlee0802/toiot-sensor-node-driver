@@ -4,7 +4,7 @@ char* ssid = "wifi-id";
 char* password = "wifi-passwd";
 char* mqtt_server = "mqtt-broker-ip";
 char* nodeId = "node-id";
-int value = 0; 
+float value = 0.0; 
 toiot t;
 
 void setup() {
@@ -17,6 +17,6 @@ void loop() {
   t.pub("sensor-id-2", value, value+1);
   t.pub("sensor-id-3", value, value+1, value+2);
   delay(4000);
-  value++; // sensor value
+  value+=0.1; // sensor value
   
 }

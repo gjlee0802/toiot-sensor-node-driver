@@ -1,6 +1,7 @@
 #include "toiot.h"
 
 #include <cstring>
+//#include <stdint.h>
 #include "arduino.h"
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -56,14 +57,15 @@ void toiot::reconnect()
     }
 }
 
-void toiot::pub(char* sensorId, int value)
+void toiot::pub(char* sensorId, float value)
 {
     if(!client.connected())
     {
         reconnect();
     }
-    snprintf (msg, 30, "%ld", value);
+    snprintf (msg, 30, "%f", value);
     snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
+    Serial.print("[Pub] ");
     Serial.print(topic);
     Serial.print(":");
     Serial.println(msg);
@@ -71,15 +73,16 @@ void toiot::pub(char* sensorId, int value)
 
 }
 
-void toiot::pub(char* sensorId, int value1, int value2)
+void toiot::pub(char* sensorId, float value1, float value2)
 {
     if(!client.connected())
     {
         reconnect();
     }
    
-    snprintf (msg, 30, "%ld, %ld", value1, value2);
+    snprintf (msg, 30, "%f, %f", value1, value2);
     snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
+    Serial.print("[Pub] ");
     Serial.print(topic);
     Serial.print(":");
     Serial.println(msg);
@@ -87,15 +90,16 @@ void toiot::pub(char* sensorId, int value1, int value2)
 
 }
 
-void toiot::pub(char* sensorId, int value1, int value2, int value3)
+void toiot::pub(char* sensorId, float value1, float value2, float value3)
 {
     if(!client.connected())
     {
         reconnect();
     }
     
-    snprintf (msg, 30, "%ld, %ld, %ld", value1, value2, value3);
+    snprintf (msg, 30, "%f, %f, %f", value1, value2, value3);
     snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
+    Serial.print("[Pub] ");
     Serial.print(topic);
     Serial.print(":");
     Serial.println(msg);
