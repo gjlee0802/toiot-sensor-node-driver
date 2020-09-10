@@ -11,7 +11,7 @@
 
 4. Write the code like examples/ToIoTwithWIFI.
 
-```arduino
+```c++
 #include "ToIoTwithWIFI.h"
 #include "config.h"
 
