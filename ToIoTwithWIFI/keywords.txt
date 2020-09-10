@@ -1,16 +1,16 @@
 #######################################
-# Syntax Coloring Map For toiot
+# Syntax Coloring Map For ToIoTwithWIFI
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-toiot	KEYWORD1
+ToIoTwithWIFI	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-setupToiot	KEYWORD2
+setupToIoTwithWIFI	KEYWORD2
 pub	KEYWORD2
