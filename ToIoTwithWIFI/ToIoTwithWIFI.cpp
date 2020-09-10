@@ -1,18 +1,17 @@
-#include "toiot.h"
-
+#include "ToIoTwithWIFI.h"
 #include <cstring>
-//#include <stdint.h>
+#include <stdarg.h>
 #include "arduino.h"
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-toiot::toiot()
+ToIoTwithWIFI::ToIoTwithWIFI()
 {
     PubSubClient* client2 = new PubSubClient (espClient);
     client = *client2;
 }
 
-void toiot::setupToiot(char* nodeI, char* ssid, char* password, char* broker_ip)
+void ToIoTwithWIFI::setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, char* broker_ip )
 {
     Serial.begin(115200);
     
@@ -42,7 +41,7 @@ void toiot::setupToiot(char* nodeI, char* ssid, char* password, char* broker_ip)
     client.setServer(broker_ip, 1883);
 }
 
-void toiot::reconnect()
+void ToIoTwithWIFI::reconnect()
 {
     while (!client.connected()) {
         Serial.print("Attempting MQTT connection...");
@@ -57,47 +56,29 @@ void toiot::reconnect()
     }
 }
 
-void toiot::pub(char* sensorId, float value)
+void ToIoTwithWIFI::pub(char* sensorId, int cnt, ...)
 {
     if(!client.connected())
     {
         reconnect();
     }
-    snprintf (msg, 30, "%f", value);
-    snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
-    Serial.print("[Pub] ");
-    Serial.print(topic);
-    Serial.print(":");
-    Serial.println(msg);
-    client.publish(topic,  msg);
-
-}
-
-void toiot::pub(char* sensorId, float value1, float value2)
-{
-    if(!client.connected())
+    va_list ap;
+    va_start(ap, cnt);
+    int res = 0;
+    memset(msg, 0, 40);
+    for(int i=0; i<cnt; i++)
     {
-        reconnect();
+        if(i == cnt-1)
+        {
+            res += vsprintf(msg+res, "%lf", ap);
+        }
+        else
+        {
+            res += vsprintf(msg+res, "%lf,", ap);
+        }
+        va_arg(ap, double);
     }
-   
-    snprintf (msg, 30, "%f, %f", value1, value2);
-    snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
-    Serial.print("[Pub] ");
-    Serial.print(topic);
-    Serial.print(":");
-    Serial.println(msg);
-    client.publish(topic,  msg);
-
-}
-
-void toiot::pub(char* sensorId, float value1, float value2, float value3)
-{
-    if(!client.connected())
-    {
-        reconnect();
-    }
-    
-    snprintf (msg, 30, "%f, %f, %f", value1, value2, value3);
+    va_end(ap);
     snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
     Serial.print("[Pub] ");
     Serial.print(topic);
