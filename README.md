@@ -1,5 +1,5 @@
 # ToIoT-sensor-driver
-* This library is used in the sensor node of the toiot iot platform.  
+* This library is used in the sensor node of the ToIoT platform.  
 * Publish the value to the mqtt broker in the `data/[node_uuid]/[sensor_uuid]` topic in a fixed format using the pub function.
 
 ## Getting Started
