@@ -10,7 +10,7 @@ class ToIoTwithWIFI
 {
     public:
         ToIoTwithWIFI();
-        void setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, char* broker_ip);
+        void setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, char* broker_ip, int broker_port);
         void pub(char* sensorId, int cnt, ...);
         void reconnect();
         PubSubClient client;

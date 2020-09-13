@@ -18,7 +18,7 @@ ToIoTwithWIFI t;
 
 void setup() {
     // These parameters are in the config.h file.
-    t.setupToIoTwithWIFI(nodeId, ssid, password, mqtt_server);
+    t.setupToIoTwithWIFI(nodeId, ssid, password, mqtt_server, mqtt_port);
 }
 
 
