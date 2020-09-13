@@ -16,8 +16,8 @@ double value = 0.0; // your sensor value
 ToIoTwithWIFI t;
 
 void setup() {
-    t.setupToIoTwithWIFI(nodeId, ssid, password, mqtt_server);
     // These parameters are in the config.h file.
+    t.setupToIoTwithWIFI(nodeId, ssid, password, mqtt_server);
 }
 
 
