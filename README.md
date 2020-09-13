@@ -1,7 +1,7 @@
 # ToIoT-sensor-driver
 * This library is used in the sensor node of the ToIoT platform.  
-* The measured sensor values ??are delivered to the sink node through MQTT.
-* Publish the value to the mqtt broker in the `data/[node_uuid]/[sensor_uuid]` topic in a fixed format using the pub function.
+* The measured sensor values are delivered to the sink node through MQTT.
+* Publish the value to the mqtt broker in the `data/[node_uuid]` topic in a fixed format using the pub function.
 
 ## Getting Started
 1. Use the Arduino Library Manager to install the `ESP8266WiFi,` `PubSubClient` library.
@@ -26,8 +26,8 @@ void setup() {
 
 
 void loop() {
-    /* Read sensor values ??and call the pub function 
-    with the sensor uuid, number of values, and values ??as arguments */
+    /* Read sensor values and call the pub function 
+    with the sensor uuid, number of values, and values as arguments */
     t.pub("sensor-uuid-1", 1, value);
     t.pub("sensor-uuid-2", 2, value, value);
     t.pub("sensor-uuid-3", 3, value, value, value);

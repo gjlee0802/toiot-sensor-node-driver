@@ -16,8 +16,8 @@ class ToIoTwithWIFI
         PubSubClient client;
     private:
         unsigned long lastMsg = 0;
-        char topic[100];
-        char msg[40];  
+        char topic[26];
+        char msg[50];  
         char* nodeId;
         WiFiClient espClient;
         
