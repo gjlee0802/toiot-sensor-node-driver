@@ -11,7 +11,7 @@ ToIoTwithWIFI::ToIoTwithWIFI()
     client = *client2;
 }
 
-void ToIoTwithWIFI::setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, char* broker_ip, char* broker_port)
+void ToIoTwithWIFI::setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, char* broker_ip, int broker_port)
 {
     Serial.begin(115200);
     
