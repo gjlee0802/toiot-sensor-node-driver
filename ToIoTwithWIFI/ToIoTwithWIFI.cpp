@@ -37,6 +37,7 @@ void ToIoTwithWIFI::setupToIoTwithWIFI(char* nodeI, char* ssid, char* password, 
     Serial.println(WiFi.localIP());
  
     nodeId = nodeI;
+    snprintf(topic, 26, "data/%s", nodeId);
 
     client.setServer(broker_ip, 1883);
 }
@@ -65,7 +66,8 @@ void ToIoTwithWIFI::pub(char* sensorId, int cnt, ...)
     va_list ap;
     va_start(ap, cnt);
     int res = 0;
-    memset(msg, 0, 40);
+    memset(msg, 0, 50);
+    res = sprintf(msg, "%s,", sensorId);
     for(int i=0; i<cnt; i++)
     {
         if(i == cnt-1)
@@ -79,7 +81,6 @@ void ToIoTwithWIFI::pub(char* sensorId, int cnt, ...)
         va_arg(ap, double);
     }
     va_end(ap);
-    snprintf(topic, 100, "data/%s/%s", nodeId, sensorId);
     Serial.print("[Pub] ");
     Serial.print(topic);
     Serial.print(":");
