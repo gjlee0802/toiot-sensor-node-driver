@@ -22,8 +22,8 @@ void setup() {
 
 
 void loop() {
-    /* Read sensor values ??and call the pub function 
-    with the sensor uuid, number of values, and values ??as arguments */
+    /* Read sensor values and call the pub function 
+    with the sensor uuid, number of values, and values as arguments */
     t.pub("sensor-uuid-1", 1, value);
     t.pub("sensor-uuid-2", 2, value, value);
     t.pub("sensor-uuid-3", 3, value, value, value);
