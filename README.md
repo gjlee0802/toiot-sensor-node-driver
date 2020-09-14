@@ -6,8 +6,8 @@
 ## Getting Started
 1. Use the Arduino Library Manager to install the `ESP8266WiFi`, `PubSubClient` library.
 2. Download `ToIoTwithWIFI` and put it in the Arduino/libraries folder.
-3. Fill in the contents of `config.h` file(ToIoTwithWIFI/examples/ToIoTwithWIFI/config.h) and put it in the sketch folder. You can set this application through this file.
-4. Write the code like examples/ToIoTwithWIFI.
+3. Fill in the contents of `config.h` and put it in the sketch folder. You can set this application through this file.
+4. Write the main source code like [example](https://github.com/SSU-NC/toiot-sensor-node-driver/blob/dev/ToIoTwithWIFI/examples/ToIoTwithWIFI/ToIoTwithWIFI.ino).
 
 ```c++
 #include "ToIoTwithWIFI.h"
