@@ -3,7 +3,7 @@
 * The measured sensor values are delivered to the sink node through MQTT.
 * Publish the value to the mqtt broker in the `data/[node_uuid]` topic in a fixed format using the pub function.
 
-## Getting Started
+## Getting Started with WIFI
 1. Use the Arduino Library Manager to install the `ESP8266WiFi`, `PubSubClient` library.
 2. Download `ToIoTwithWIFI` and put it in the Arduino/libraries folder.
 3. Fill in the contents of `config.h` and put it in the sketch folder. You can set this application through this file.
@@ -31,4 +31,8 @@ void loop() {
     delay(4000); 
 }
 ```
+
+## Getting Started with LoRaWAN
+
+## Getting Started with Bluetooth
 
