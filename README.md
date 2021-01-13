@@ -34,7 +34,7 @@ void loop() {
 
 ## Getting Started with LoRaWAN
 
-- Things to know before you begin.
+### Things to know before you begin.   
 According to the LoRa Alliance document, **the unlicensed ISM band for Lora's use in Korea is specified as 920-923.**   
 The 433 MHz band used by the SX1278 LoRa chip is a limited frequency band in Korea.   
 The 433 MHz band frequency is the band assigned to the **HAM**.   
