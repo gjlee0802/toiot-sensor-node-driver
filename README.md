@@ -37,7 +37,7 @@ void loop() {
 Connect SX1278 with arduino as shown as below.   
 ![Transmitting-Side-Connecting-LoRa-SX1278-with-Arduino-UNO](https://user-images.githubusercontent.com/49184890/104311794-12a0bf00-5519-11eb-8039-b8d42397c83b.png)
 ![LoRa_with_UNO](https://user-images.githubusercontent.com/49184890/104308980-cce1f780-5514-11eb-8256-a2de8c06e99f.PNG)   
-- For NodeMCU:    
+- For NodeMCU SENDER:    
 Connect SX1278 with NodeMCU as shown as below.   
 ![LoRa_with_NodeMCU](https://user-images.githubusercontent.com/49184890/104408324-2561d500-55a7-11eb-88b7-c84003821d7b.PNG)   
 
