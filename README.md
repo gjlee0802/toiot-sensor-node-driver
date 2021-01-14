@@ -35,12 +35,12 @@ void loop() {
 ## Getting Started with LoRaWAN
 
 ### Things to know before you begin.   
-It must be in compliance with the national frequency band regulations.   
-According to the LoRa Alliance document, **the unlicensed ISM band for Lora's use in Korea is specified as 920-923.**   
-The 433 MHz band used by the SX1278 LoRa chip is a limited frequency band in Korea.   
-The 433 MHz band frequency is the band assigned to the **HAM**.   
-To use LoRa **in Korea, LBT(Listen Before Talk)** should be used in Korea.   
-But in this project, we used 433 MHz for test.   
+* It must be in compliance with the national frequency band regulations.   
+* According to the LoRa Alliance document, **the unlicensed ISM band for Lora's use in Korea is specified as 920-923.**   
+* The 433 MHz band used by the SX1278 LoRa chip is a limited frequency band in Korea.   
+* The 433 MHz band frequency is the band assigned to the **HAM**.   
+* To use LoRa **in Korea, LBT(Listen Before Talk)** should be used in Korea.   
+* But in this project, we used 433 MHz for test.   
    
 - For Arduino:    
 Connect SX1278 with arduino as shown as below.   
